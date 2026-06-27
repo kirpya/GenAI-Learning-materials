@@ -1,0 +1,42 @@
+# Day 1: AI/ML/DL/GenAI Learning
+
+## Key Concepts Learned:
+
+### 1. AI vs ML vs DL vs GenAI
+- **AI**: Broad field of intelligent machines
+- **ML**: Machines learn from data and improve over time
+- **DL**: Neural networks with many layers (mimics human brain)
+- **GenAI**: Creates new content (ChatGPT, DALL-E, etc.)
+
+### 2. What is LLM?
+- LLM = Large Language Model
+- Trained on billions of words
+- Predicts next word based on context
+- Examples: ChatGPT, Claude, Gemini
+
+### 3. How Transformers Work (High-Level)
+1. **Tokenization**: Break text into words/tokens
+2. **Embedding**: Convert words to numbers
+3. **Self-Attention**: Find relationships between words
+4. **Feed-Forward**: Process and understand meaning
+5. **Output**: Predict next word or generate response
+
+Key concept: Attention mechanism helps understand context.
+
+### 4. Prompt Engineering
+- Art of asking AI the right questions
+- Techniques:
+  - Be specific and clear
+  - Give examples (few-shot prompting)
+  - Specify desired format
+  - Use step-by-step reasoning (chain-of-thought)
+
+## Practice:
+- Created folder structure: GenAI-Learning/Day-1/
+- Used Git to version control learning materials
+- Practiced command line basics
+
+## Next Steps:
+- Learn more about neural networks
+- Practice prompt engineering with different techniques
+- Build a small GenAI project
