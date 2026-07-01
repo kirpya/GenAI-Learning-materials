@@ -1,0 +1,231 @@
+#find even or odd number
+x=int(input("enter a number: "))
+
+def is_even(num):
+     if num %2 ==0:
+         return print("the number is even")
+     else:
+         return print("the number is odd")
+
+print(is_even(x))
+
+#find factorial of a number
+x=int(input("enter a number:"))
+
+def factorial(num):
+    if num==0 or num==1:
+        return 1
+    else:
+        return num*factorial(num-1)
+    
+    
+print(factorial(x))
+
+#function for the list of numbers sum and average
+
+import numbers
+
+
+def sum_and_average(num):
+    total =sum(num)
+    average=total/len(num)
+
+    return total,average
+  
+    
+numbers = [int(x) for x in input("enter number in list separated by space:").split()]
+
+total,average=sum_and_average(numbers)
+
+
+print("Sum:",total)
+print("Average:",average)
+
+
+#find the student with highest average marks
+students = {
+    "Alice": {"Math": 85, "Science": 90, "English": 88},
+    "Bob": {"Math": 78, "Science": 92, "English": 85},
+    "Charlie": {"Math": 92, "Science": 87, "English": 91}
+}
+   
+def find_top_student(students):
+    top_student=None
+    highest_average=0
+
+   
+    for student,marks in students.items():
+        average=sum(marks.values())/len(marks)
+        if average>highest_average:
+            highest_average=average
+            top_student=student
+
+    return top_student,highest_average
+
+print(f"the top student is {find_top_student(students)[0]} with an average of {find_top_student(students)[1]:.2f}")
+
+#counting frequency of words in the list
+
+words = ["apple", "banana", "apple", "orange", "banana", "apple"]
+
+fruits ={
+    "apple":0,
+    "banana":0,
+    "orange":0
+}
+
+def count_fruits(words,fruits):
+    for word in words:
+        if word in fruits:
+            fruits[word]+=1
+    return fruits
+
+result=count_fruits(words,fruits)
+
+for key,value in result.items():      
+ print(f"{key}: {value} ")
+
+# merge two dictonaries and update values
+dict1 = {"a": 1, "b": 2, "c": 3}
+dict2 = {"c": 30, "d": 4, "e": 5}
+
+dict1.update(dict2)
+dict1["a"]=30
+
+print(dict1)
+
+#phone book
+phone_book = {
+    "Alice": "9876543210",
+    "Bob": "8765432109",
+    "Charlie": "7654321098"
+}
+
+phone_book["Diana"] = "6543210987"
+print("Added Diana: 6543210987")
+
+phone_book.update({"Alice": "9999999999"})
+print("Updated Alice: 9999999999")
+
+phone_book.pop("Bob")
+print("deleted Bob's contact")
+
+search_name = input("enter a name to search for:")
+
+if search_name in phone_book:
+        print(f"{search_name}:{phone_book[search_name]}")
+else:
+        print(f"{search_name} not found in the phone book")
+
+print("\n All Numbers:")
+for name,numbers in phone_book.items():
+    print(f"{name}:{numbers}")
+
+
+# create a list of square from 1 to 10
+#[expression for item in iterable if condition]
+
+numbers=[1,2,3,4,5,6,7,8,9,10]
+doubled=[x**2 for x in numbers]
+
+# print(doubled)
+
+even_number=[x for x in range(1,11) if x%2==0]
+print(even_number)
+
+#Convert strings to uppercase, but only if they start with a vowel
+words = ["apple", "banana", "orange", "egg", "mango"]
+uppercase_strings=[word.upper() for word in words if word[0] in "aeiou" ]
+print(uppercase_strings)
+
+# Create a list of tuples (number, square, cube) for numbers 1-5
+numbers=[(x,x**2,x**3) for x in range(1,6)]
+print(numbers)
+
+# students = ["Alice", "Bob", "Charlie", "Diana", "Eve"]
+# # Create a file "students.txt" with names, one per line
+
+students = ["Alice", "Bob", "Charlie", "Diana", "Eve"]
+
+with open("student.txt","w") as file:
+   for student in students:
+       file.write(student + "\n")
+
+with open ("student.txt","r") as file:
+  for line in file:
+     print(line.strip())
+
+with open ("student.txt","r") as file:
+   lines= file.readlines()
+   count=len(lines)
+print(f"total lines:{count}")
+
+# Write to CSV format (name,age,gpa)
+# Your code here
+
+# Read and print the file
+# Your code here
+
+students = [
+    ("Alice", 20, 3.8),
+    ("Bob", 21, 3.5),
+    ("Charlie", 20, 3.9)
+]
+
+with open("student.csv","w") as file:
+    for student in students:
+        line=",".join(str(x)for x in student)+"\n"
+        file.write(line)
+
+with open("student.csv","r") as file:
+    for line in file:
+        print(line.strip())
+
+with open("student.csv","r") as file:
+    text=file.read()
+
+words =text.split(",")
+count=len(words)
+
+print("number of words:",count)
+
+# EXCEPTION HANDLING
+try:
+    num1= int(input("Enter first number:"))
+    num2=int(input("enter second number:"))
+    result = num1/num2
+    print(f"Result:{result}")
+except ZeroDivisionError:
+    print("Cannot divide by zero")
+except ValueError:
+    print("Invalid input! Please enter numbers only.")
+
+
+numbers = [10, 20, 30, 40, 50]
+
+try:
+    index = int(input("Enter an index: "))
+    print(f"Number at index {index}: {numbers[index]}")
+except IndexError:
+    print("Index out of range")
+except ValueError:
+    print("Invalid input! Please enter a number.")
+
+try:
+    filename = input("Enter filename: ")
+    with open(filename, "r") as file:
+        content = file.read()
+    print(f"File contents:\n{content}")
+except FileNotFoundError:
+    print("File not found! Please check the filename.")
+except Exception as e:
+    print(f"An Error occurred:{e}")
+
+student = {"name": "Alice", "age": 20, "gpa": 3.8}
+
+try:
+    key = input("Enter a key to search: ")
+    value = student[key]
+    print(f"{key}: {value}")
+except KeyError:
+    print(f"Key '{key}' not found in dictionary!")
