@@ -1,0 +1,66 @@
+# #MODULES AND PACKAGES
+# import math
+# from math import sqrt
+# from math import  sqrt, pi
+# import numpy as np
+# from math import *
+# print("numpy version:", np.__version__)
+
+#sys module
+import sys
+print(sys.path)    ## list of command-line arguments passed to script
+print(sys.version)  # Python version info
+print(sys.platform)  # list of directories Python searches for modules
+sys.exit()                # stop script execution immediately
+
+#json module
+import json
+data = {"name": "Kirpya", "age": 20, "skills": ["Python", "ML"]}
+
+#python dictionary to json obect
+json_object = json.dumps(data)
+print(json_object)
+
+#json object to python dictionary
+back_to_dict = json.loads(json_str)
+print(back_to_dict["name"])
+
+#write to file 
+with open("data.json","w") as f:
+    json.dump(data,f)
+
+#read from file
+with open("data.json","r") as f:
+    loaded = json.load(f) 
+
+#collections module
+from collections import counter , defaultdict
+words = ["apple", "banana", "apple", "orange", "banana", "apple"]
+count = Counter(words)
+print(count)
+print(count.most_common(2))
+
+d = dfaultdict(int)
+d["X"] += 1
+print(d["X"])
+
+#Regular expressions
+import re
+text = "My email is kirpya@example.com and phone is 9876543210"
+
+email= re.search(r'[w.-]+@[\w.-]+', text)
+print(email.group())
+
+digits = re.findall(r'\d+', text)
+print(digits)
+
+cleaned= re.sub(r'\d+', '', text)
+print(cleaned)
+
+#itertools module
+import itertools
+combos= list(itertools.combinations([1,2,3], 2))
+print(combos)
+
+perms= list(itertools.permutations([1,2,3], 2))
+print(perms)
