@@ -1,0 +1,34 @@
+
+
+try: #always attempted first #code that might fail
+     result = 10 / 2
+except ZeroDivisionError: #an error occurs in try #handle the error
+    print("Error: Division by zero is not allowed.")
+else: #try succeeds no errors #code that needs the try to have worked.
+    print("Result:", result)
+finally:#always execute ,error or not #cleanup(closing files ,connections)
+    print("This will always run")
+
+try:
+    num = int(input("Enter a number:"))
+    result = 10/2
+except ValueError:
+    print("That's not a valid number:")
+except ZeroDivisionError:
+    print("Can't divide by zero.")
+except Exception as e :
+    print(f"Unexpected error:{e}")
+
+#Raise
+def set_age(age):
+    if age<0:
+        raise ValueError("Age cannot be negative.")
+    return age
+set_age(-5)
+
+
+try:
+    result=1/0
+except ZeroDivisionError:
+    print("Can't divide by zero.")
+    raise
